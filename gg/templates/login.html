@@ -1,0 +1,17 @@
+{% extends 'login_layout.html' %}
+{% block header %}
+    <h1>{% block title %}Login Here{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('login') }}" method="post">
+        <label for="username">Username</label>
+        <input name="username" id="username" placeholder="Enter your username" required>
+        <label for="password">Password</label>
+        <input name="password" type="password" id="password" placeholder="Enter your password" required>
+        <a href="{{ url_for('signup') }}"><input type="button" value="LOG IN AS GUEST"></a>
+
+        <!--When user press button, value of username will be stored as guest followed by warning message saying want to continue and feature xx will be blocked -->
+        <input type="submit" value="LOGIN">
+    </form>
+{% endblock %}

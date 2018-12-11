@@ -38,3 +38,17 @@ def create_table(expense_type, amount, name):
     expense.amount = amount
     expense.name = name
     expenses[table] = expense
+
+
+def init():
+    delete_table()
+    for i in range(4):
+        create_table('expense_type'+str(i), 'name'+str(i), 'amount'+str(i))
+
+
+def get_table():
+    e_list = list(expenses.keys())
+    x = []
+    for i in e_list:
+        x.append(expenses[i])
+    return x

@@ -87,7 +87,7 @@ def check_user(username, email):
     conn.commit()
     for row in k:
         print(row)
-        if row[1] == username and row[2] == email:
+        if row[1] == username or row[2] == email:
             return False
 
 

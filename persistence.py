@@ -1,7 +1,4 @@
-# import place here
 import sqlite3
-  # (random id generator)
-import smtplib
 # class and stuff
 
 
@@ -34,7 +31,7 @@ class User:
         self.__password = password
 
 
-conn = sqlite3.connect('user.db')
+conn = sqlite3.connect('user.db', check_same_thread=False)
 
 c = conn.cursor()
 
